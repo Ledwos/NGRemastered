@@ -8,6 +8,6 @@ from . import views
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('user/', include('django.contrib.auth.urls')),
-    #path('<int:question_id>/', views.detail, name='detail'),
+    path('signup/', views.SignUp.as_view(), name='signup'),
 ]
 
