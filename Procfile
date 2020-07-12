@@ -1,1 +1,1 @@
-web: gunicorn newsgame.newsgame.wsgi
+web: gunicorn newsgame.wsgi
