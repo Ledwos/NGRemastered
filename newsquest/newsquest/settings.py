@@ -131,7 +131,7 @@ STATICFILES_DIRS = (
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'world'
 LOGOUT_REDIRECT_URL = '/'
 
 # Activate Django-Heroku.

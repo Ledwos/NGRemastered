@@ -4,13 +4,24 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.name }}!
-  <a href="{% url 'logout' %}">logout</a>
+    <p>Hi <span id="username">{{user.name}}!</span></p>
+    <p>points: <span id="points">{{user.points}}</span></p>
+    <a href="{% url 'logout'%}">log out</a>
+
 {% else %}
-  <p>Welcome to NewsQuest, a fun way of reading the news! <br /> (yes you read that right)</p>
-  <a href="{% url 'login' %}">login</a>
-  <p>No account? sign up <a href="{% url 'signup' %}">here</a></p>
-  <p>DISCLAIMER: This is all there is to the current build <br /> 
-    so don't feel inclined to make an account (yet!)</p>
+    <div class="splash">
+        <div class="game-title">
+            <h1>NewsQuest</h1>
+            {% load static %}
+            <img src="{% static 'logo2.png' %}" alt="logo" style="width: 150px; text-align: center;display: block;margin: auto;">
+        </div>
+        <div class="login-container">
+            <p>You don't appear to be logged in.</p>
+            <div class="login-box">
+                <a href="{% url 'login'%}">Login</a>
+                <a href="{% url 'signup'%}">Signup</a>
+            </div>
+        </div>
+    </div>
 {% endif %}
 {% endblock %}
