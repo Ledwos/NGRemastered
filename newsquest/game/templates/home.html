@@ -3,5 +3,14 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<p>Welcome to NewsQuest, a fun way of reading the news! <br /> (yes you read that right)</p>
+{% if user.is_authenticated %}
+  Hi {{ user.name }}!
+  <a href="{% url 'logout' %}">logout</a>
+{% else %}
+  <p>Welcome to NewsQuest, a fun way of reading the news! <br /> (yes you read that right)</p>
+  <a href="{% url 'login' %}">login</a>
+  <p>No account? sign up <a href="{% url 'signup' %}">here</a></p>
+  <p>DISCLAIMER: This is all there is to the current build <br /> 
+    so don't feel inclined to make an account (yet!)</p>
+{% endif %}
 {% endblock %}
