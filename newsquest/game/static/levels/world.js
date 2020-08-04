@@ -221,7 +221,7 @@ function drawText() {
 
 function draw() {
   // clear before redraw
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // ctx.clearRect(0, 0, canvas.width, canvas.height);
   // loop through array on y axis and draw blocks
   for (y = 0; y < grid.length; y++) {
     //   loop through each subarray for x axis
